@@ -19,7 +19,7 @@ public class UserController {
 	@Qualifier("userService")
 	private UserService userService;
 	
-	@RequestMapping("/findOneUser")
+	@RequestMapping("/findOneUser.action")
 	public String findOneUser(String id,HttpServletRequest request) {
 		
 		UserTest userTest = userService.findOne(id);
