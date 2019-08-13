@@ -17,7 +17,6 @@ public class UserServiceImpl implements UserService {
 	
 	public UserTest findOne(String id) {
 		
-		System.out.println("Œ“ «service≤„");
 		return userDao.finOne(id);
 	}
 

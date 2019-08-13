@@ -24,6 +24,7 @@ public class UserController {
 		
 		UserTest userTest = userService.findOne(id);
 
+		System.out.println(userTest);
 		request.setAttribute("u_id", userTest.getId());
 		request.setAttribute("u_passwd", userTest.getPassword());
 		
