@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="referrer" content="no-referrer">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="${pageContext.servletContext.contextPath }/js/jquery-3.4.1.min.js"></script>
@@ -32,7 +33,7 @@
 		<c:forEach items="${movies }" var="movie">
 		<a href="${pageContext.servletContext.contextPath }/movie/movieDetail.action?id=${movie.id }">
 			<li class="movie_li">
-				<img style="width:200px;height:296px;margin:5px;" onerror="javascript:this.src='${pageContext.servletContext.contextPath }/images/001.jpg'" src="${movie.imgurl }">
+				<img style="width:200px;height:296px;margin:5px;" onerror="javascript:this.src='${pageContext.servletContext.contextPath }/images/001.jpg'" src="${movie.imgurl}">
 				<span style="color:blue;">${movie.name }</span><br>
 				<span style="color:black">评分：${movie.rate }</span>
 			</li>

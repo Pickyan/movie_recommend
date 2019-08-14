@@ -1,9 +1,11 @@
+<%@page import="com.yzy.movie.entity.Movie"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="referrer" content="no-referrer">
 <meta charset="UTF-8">
 <title>电影详情页面</title>
 <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
@@ -113,71 +115,31 @@
 
 
 	<script type="text/javascript">
-			/* // 基于准备好的dom，初始化echarts图表
-			var myChart = echarts.init(document.getElementById('echarts'));
-			var option = {
-				tooltip : {
-					show : true
-				},
-				legend : {
-					data : [ '销量' ]
-				},
-				xAxis : [ {
-					type : 'category',
-					data : [ "衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子" ]
-				} ],
-				yAxis : [ {
-					type : 'value'
-				} ],
-				series : [ {
-					"name" : "销量",
-					"type" : "bar",
-					"data" : [ 5, 20, 40, 10, 10, 20 ]
-				} ]
-			};
-
-			// 为echarts对象加载数据 
-			myChart.setOption(option); */
-			option = {
-				    legend: {
-				        data:['搜索引擎']
-				    },
-				    xAxis : [
-				        {
-				            data : ['周一','周二','周三','周四','周五','周六','周日']
-				        }
-				    ],
-				    yAxis : [ ],
-				    series : [
-				        {
-				            name:'搜索引擎',
-				            type:'bar',
-				            barWidth: 40,                   // 系列级个性化，柱形宽度
-				            itemStyle: {
-				                normal: {                   // 系列级个性化，横向渐变填充
-				                    color : (function (){
-				                        var zrColor = require('zrender/tool/color');
-				                        return zrColor.getLinearGradient(
-				                            0, 0, 1000, 0,
-				                            [[0, 'rgba(30,144,255,0.8)'],[1, 'rgba(138,43,226,0.8)']]
-				                        )
-				                    })(),
-				                    label : {
-				                        show : true,
-				                        textStyle : {
-				                            fontSize : '20',
-				                            fontFamily : '微软雅黑',
-				                            fontWeight : 'bold'
-				                        }
-				                    }
-				                }
-				            },
-				            data:[
-				                620, 732,701,734, 890, 930, 820
-				            ]
-				        }
-				    ]
-				};
+		var m = "${movie.star}".split(",");
+		// 基于准备好的dom，初始化echarts图表
+		var myChart = echarts.init(document.getElementById('echarts'));
+		var option = {
+			tooltip : {
+				show : true
+			},
+			legend : {
+				data : [ '评分：${movie.rate}' ]
+			},
+			xAxis : [ {
+				type : 'category',
+				data : [ "1星", "2星", "3星", "4星", "5星" ]
+			} ],
+			yAxis : [ {
+				type : 'value'
+			} ],
+			series : [ {
+				"name" : "人数",
+				"type" : "bar",
+				"data" : [ m[0], m[1], m[2], m[3], m[4] ]
+			} ]
+		};
+		// 为echarts对象加载数据 
+		myChart.setOption(option);
 	</script>
 </body>
 </html>
